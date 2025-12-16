@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard | Shahed IELTS Prep</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="font-family:Arial; text-align:center; padding:30px;">
+
+  <h1>Welcome</h1>
+  <h2 id="student"></h2>
+
+  <p>Select a test to start practice</p>
+
+  <button style="padding:10px;">Reading Test</button>
+  <button style="padding:10px;">Listening Test</button>
+
+  <br><br>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    let name = localStorage.getItem("studentName");
+    if(!name) {
+      window.location.href = "login.html";
+    }
+    document.getElementById("student").innerText = name;
+
+    function logout() {
+      localStorage.removeItem("studentName");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
