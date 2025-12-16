@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login | Shahed IELTS Prep</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="font-family:Arial; text-align:center; padding:30px;">
+
+  <h1>Shahed IELTS Prep</h1>
+  <h2>Student Login</h2>
+
+  <input id="name" placeholder="Enter your name"
+    style="padding:10px; width:80%; max-width:300px;"><br><br>
+
+  <button onclick="login()"
+    style="padding:12px 20px; font-size:16px;">
+    Login
+  </button>
+
+  <script>
+    function login() {
+      let name = document.getElementById("name").value;
+      if(name === "") {
+        alert("Please enter your name");
+      } else {
+        localStorage.setItem("studentName", name);
+        window.location.href = "dashboard.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
